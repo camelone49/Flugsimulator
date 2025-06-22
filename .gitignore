@@ -1,0 +1,18 @@
+# ROS 2 build and install artifacts
+build/
+install/
+log/
+.colcon/
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Windows system files
+Thumbs.db
+desktop.ini
+
+# Others
+*.swp
