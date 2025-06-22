@@ -6,7 +6,7 @@ Kind of like this: https://www.youtube.com/watch?v=KW-ONbO5NYU
 
 Here you can find the things I am doing to realize this project. I am starting with a simulation:
 
-## Running Instructions
+## Running Instructions (Currently only for Windows, For Ubuntu change the Docker commands below - Just ask ChatGPT)
 I am trying to program this application such that it can be accessed from any computer using a Docker container.
 To run the current example (Windows Instructions):
 
