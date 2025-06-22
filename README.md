@@ -1,4 +1,7 @@
 # Hishams Flight Simulator Model 
+![image](https://github.com/user-attachments/assets/01778c11-7b39-4e70-bb66-18073ae26a80)
+(Image from: https://images.squarespace-cdn.com/content/v1/58e3af9f8419c208174bbb4b/536c152f-ecec-45a6-9d9c-927765902610/robotic+motion+simulators+flight+simulation+becrobotics+kuka+6dof+-+1.png)
+Is only for visualization!!
 
 ## Idea
 The idea is to mount a cockpit on to a 6DOF robot and then control the joints such that you feel like you are in your own airplane!
