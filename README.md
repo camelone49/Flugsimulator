@@ -11,7 +11,7 @@ I am trying to program this application such that it can be accessed from any co
 To run the current example (Windows Instructions):
 
 1. Clone the repository
-2. Install the Docker Engine
+2. Install the Docker Engine https://www.youtube.com/watch?v=JBEUKrjbWqg
 3. Install the Windows XLaunch app from https://sourceforge.net/projects/vcxsrv/ and run it, put "0" into the first input where you select the screen. Anything else can stay as it is.
 4. Navigate into the folder root and run the following command (It's okay if it takes time):
    ``` bash
