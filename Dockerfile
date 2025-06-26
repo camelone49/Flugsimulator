@@ -6,7 +6,15 @@ RUN apt-get update && apt-get install -y \
     python3-vcstool \
     python3-colcon-common-extensions \
     python3-argcomplete \
-    python3-pytest 
+    python3-pytest \
+    build-essential \
+    cppcheck \
+    clang \
+    cmake \
+    qtbase5-dev \
+    qtchooser \
+    qt5-qmake \
+    qtbase5-dev-tools 
 
 
 #install gazebo 
