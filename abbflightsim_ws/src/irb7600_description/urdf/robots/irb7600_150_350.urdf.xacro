@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<robot name="abb_irb7600_150_350" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:arg name="robot_name" default="abb_irb7600_150_350"/>
+    <xacro:arg name="add_world" default="true"/>
+    <xacro:arg name="base_link" default="base_link"/>
+    <xacro:arg name="base_type" default="g_shape"/>
+    <xacro:arg name="flange_link" default="flange"/>
+    <xacro:arg name="prefix" default=""/>
+    <xacro:arg name="use_gazebo" default="false"/>
+
+
+  <xacro:include filename="$(find irb7600_description)/urdf/mech/irb7600_150_350_macro.xacro"/> <!-- Include the macro file for the robot -->
+
+
+  <xacro:include filename="$(find irb7600_description)/urdf/control/gazebo_sim_ros2_control.urdf.xacro"/>
+  <xacro:load_gazebo_sim_ros2_control_plugin
+  robot_name="$(arg robot_name)"
+  use_gazebo="$(arg use_gazebo)"/>
+
+  <xacro:include filename="$(find irb7600_description)/urdf/control/irb7600_ros2_control.urdf.xacro"/>
+    <xacro:irb7600_ros2_control
+    prefix="$(arg prefix)"
+    flange_link="$(arg flange_link)"
+    use_gazebo="$(arg use_gazebo)"/>
+  <xacro:abb_irb7600_150_350 prefix=""/>
+</robot>

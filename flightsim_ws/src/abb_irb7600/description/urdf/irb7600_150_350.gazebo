@@ -1,0 +1,135 @@
+<?xml version ="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:property name="prefix" value=""/>
+
+        <gazebo reference ="${prefix}base_link">
+            <mu1>0.02</mu1>
+            <mu2>0.02</mu2>
+            <material>Gazebo/Orange</material>
+        </gazebo>
+
+        <gazebo reference ="${prefix}link_1">
+            <mu1>0.02</mu1>
+            <mu2>0.02</mu2>
+            <material>Gazebo/Orange</material>
+        </gazebo>
+
+        <gazebo reference ="${prefix}link_2">
+            <mu1>0.02</mu1>
+            <mu2>0.02</mu2>
+            <material>Gazebo/Orange</material>
+        </gazebo>
+
+        <gazebo reference ="${prefix}link_3">
+            <mu1>0.02</mu1>
+            <mu2>0.02</mu2>
+            <material>Gazebo/Orange</material>
+        </gazebo>
+
+
+        <gazebo reference ="${prefix}link_4">
+            <mu1>0.02</mu1>
+            <mu2>0.02</mu2>
+            <material>Gazebo/Orange</material>
+        </gazebo>
+
+
+        <gazebo reference ="${prefix}link_5">
+            <mu1>0.02</mu1>
+            <mu2>0.02</mu2>
+            <material>Gazebo/Orange</material>
+        </gazebo>
+
+
+        <gazebo reference ="${prefix}link_6">
+            <mu1>0.02</mu1>
+            <mu2>0.02</mu2>
+            <material>Gazebo/Orange</material>
+        </gazebo>
+
+        <gazebo reference ="${prefix}balancer_piston">
+            <mu1>0.02</mu1>
+            <mu2>0.02</mu2>
+            <material>Gazebo/Black</material>
+        </gazebo>
+
+        <gazebo reference ="${prefix}pilot_cabin_link">
+            <mu1>0.02</mu1>
+            <mu2>0.02</mu2>
+            <!--<material>Gazebo/White</material>-->
+        </gazebo>
+
+        <gazebo reference ="${prefix}wings_link">
+            <mu1>0.02</mu1>
+            <mu2>0.02</mu2>
+            <!-- <material>Gazebo/Orange</material> -->
+        </gazebo>
+
+        <gazebo>
+            <!--<plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">-->
+            <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+                <parameters>$(find abb_irb7600)/config/ros2_control.yaml</parameters>
+                <ros>
+                    <remapping>/controller_manager/robot_description:=/robot_description</remapping>
+                </ros>
+            </plugin>
+        </gazebo>
+
+        <ros2_control name="RobotController" type="system">
+            <hardware>
+                <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+            </hardware>
+
+            <joint name="${prefix}joint_1">
+                <command_interface name="position">
+                    <param name="min">-1.57</param>
+                    <param name="max">1.57</param>
+                </command_interface>
+                <state_interface name="position"/>
+            </joint>
+
+            <joint name="${prefix}joint_2">
+                <command_interface name="position">
+                    <param name="min">-1.047</param>
+                    <param name="max">1.4835</param>
+                </command_interface>
+                <state_interface name="position"/>
+            </joint>
+
+            <joint name="${prefix}joint_3">
+                <command_interface name="position">
+                    <param name="min">-1.57</param>
+                    <param name="max">1.047</param>
+                </command_interface>
+                <state_interface name="position"/>
+            </joint>
+
+            <joint name="${prefix}joint_4">
+                <command_interface name="position">
+                    <param name="min">-5.236</param>
+                    <param name="max">5.236</param>
+                </command_interface>
+                <state_interface name="position"/>
+            </joint>
+
+            <joint name="${prefix}joint_5">
+                <command_interface name="position">
+                    <param name="min">-1.745</param>
+                    <param name="max">1.745</param>
+                </command_interface>
+                <state_interface name="position"/>
+            </joint>
+
+            <joint name="${prefix}joint_6">
+                <command_interface name="position">
+                    <param name="min">-3.141</param>
+                    <param name="max">3.141</param>
+                </command_interface>
+                <state_interface name="position"/>
+            </joint>
+
+        </ros2_control>
+
+
+    </robot>
