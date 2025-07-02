@@ -73,6 +73,7 @@ The latter runs the Qt interface that allows you to control the joints of the ro
 1. Add the Joint limits
 2. Implement the inverse kinematics functionality - more on that and why it is needed and how it is going to enable the operation soon!
 3. Customize the controller
+4. Put all of this into one bash script so you don't have to go through 10 steps to run everything
 
 
     
