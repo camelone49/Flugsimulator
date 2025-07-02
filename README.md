@@ -1,5 +1,7 @@
 # Hishams Flight Simulator Model 
-![image](https://github.com/user-attachments/assets/01778c11-7b39-4e70-bb66-18073ae26a80)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/01778c11-7b39-4e70-bb66-18073ae26a80" alt="image" width="400"/>
+</p>
 (Image from: https://images.squarespace-cdn.com/content/v1/58e3af9f8419c208174bbb4b/536c152f-ecec-45a6-9d9c-927765902610/robotic+motion+simulators+flight+simulation+becrobotics+kuka+6dof+-+1.png)
 Is only for visualization!!
 
@@ -22,31 +24,55 @@ To run the current example (Windows Instructions):
    ```
 5. Then, you can start the Container by typing:
    ```bash
-   docker run -it --rm -v ${PWD}/flightsim_ws:/flightsim_ws --name first_flightsim_container --network=host -e DISPLAY=host.docker.internal:0.0 --gpus all hisham_flightsim_image
+   docker run -it --rm -v ${PWD}/abbflightsim_ws:/abbflightsim_ws --name first_flightsim_container --network=host -e DISPLAY=host.docker.internal:0.0 --gpus all hisham_flightsim_image
    ```
-   Notice how the flightsim_ws folder is mounted onto the Container as develop folder.
+   Notice how the abbflightsim_ws folder is mounted onto the Container as develop folder.
 6. in the Docker Container (for every container shell):
    ```bash
    source /opt/ros/jazzy/setup.bash
    ```
  7. Navigate to the flightsim workspace and build it:
     ``` bash
-    cd flightsim_ws
+    cd abbflightsim_ws
     colcon build
     source install/setup.bash
     ```
 
-  8. You have 3 packages, i experimented with 2. The important one is abb_irb7600, so we launch the application with the joint states publisher to control the joints:
+  8. If you want a basic visualization, continue with this step and you are done! Else, continue with 9
      ```bash
-     ros2 launch abb_irb7600 view_robot.launch.py
+     ros2 launch irb7600_description robot_state_publisher.py
      ```
    You should now see the Rviz window and the joint state publisher!
+
+9. Now its time to start the Gazebo simulation! run the coming commands in two different shells respectively (Don't forget to source your workspaces from 6. and 7.):
+      ```bash
+     ros2 launch irb7600_gazebo irb7600.gazebo.launch
+     ```
+      and
    
-   9. Click on add on the bottom left corner and select "RobotModel". Then, click on it and set the "Description Source" to Topic and the "Description Topic" to /robot_description
-   10. Control the Robot!
-   11. TODO: Add Keyboard/Controller/Joystick controls and do a more sophisticated simulation on Gazebo
-       
-![image](https://github.com/user-attachments/assets/d2cd2315-05d8-44d4-ac4e-9ca8012ee428)
+      ```bash
+     ros2 run irb7600_qtinterface qt_gui_node
+     ```
+
+The latter runs the Qt interface that allows you to control the joints of the robot by setting desired joint positions. Also, you will be able to see information about the controller status:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fb401ccc-105f-4dbe-a75e-6bf2febe06b9" alt="dof_qt_interface" width="400"/>
+</p>
+
+
+
+10. Experiment with the robot! As you might see, the practical joint limits are still not implemented and the controller is a little wild. This is still something to do, just like the inverse kinematics :) You should see the following output:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/47c91807-94ef-4d69-b3ce-12a9b844f54f" alt="gif" width="400"/>
+</p>
+
+## TODO: 
+
+1. Add the Joint limits
+2. Implement the inverse kinematics functionality - more on that and why it is needed and how it is going to enable the operation soon!
+3. Customize the controller
 
 
     
