@@ -38,7 +38,7 @@ To run the current example (Windows Instructions):
     source install/setup.bash
     ```
 
-  8. If you want a basic visualization, continue with this step and you are done! Else, continue with 9
+  8. If you want a basic visualization, continue with this step and you are done! Else (Gazebo Simulation), continue with 9
      ```bash
      ros2 launch irb7600_description robot_state_publisher.py
      ```
