@@ -32,11 +32,23 @@ To run the current example (Windows Instructions):
  7. Navigate to the flightsim workspace and build it:
     ``` bash
     cd flightsim_ws
-    colcon build --packages-select urdf_tutorial
+    colcon build
     source install/setup.bash
-    ros2 launch urdf_tutorial launch_everything.py
     ```
 
-  8. As of right now, you should see an Rviz2 window popping up with an R2D2 floating around. This is where my further TODO begins :)
-  ![image](https://github.com/user-attachments/assets/67084307-46e9-47b5-b557-3484c5cf9b60)
+  8. You have 3 packages, i experimented with 2. The important one is abb_irb7600, so we launch the application with the joint states publisher to control the joints:
+     ```bash
+     ros2 launch abb_irb7600 view_robot.launch.py
+     ```
+   You should now see the Rviz window and the joint state publisher!
+   
+   9. Click on add on the bottom left corner and select "RobotModel". Then, click on it and set the "Description Source" to Topic and the "Description Topic" to /robot_description
+   10. Control the Robot!
+   11. TODO: Add Keyboard/Controller/Joystick controls and do a more sophisticated simulation on Gazebo
+       
+![image](https://github.com/user-attachments/assets/d2cd2315-05d8-44d4-ac4e-9ca8012ee428)
+
+
+    
+   
 
