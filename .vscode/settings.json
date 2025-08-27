@@ -1,5 +1,5 @@
 {
-    "cmake.sourceDirectory": "C:/Users/Hisham/Documents/Projekte/Flugsimulator/flightsim_ws/src/abb_irb7600",
+    "cmake.sourceDirectory": "C:/Users/Hisham/Documents/Projekte/Flugsimulator/abbflightsim_ws/src/abb_irb7600",
     "files.associations": {
         "xlocinfo": "cpp",
         "xstring": "cpp",
