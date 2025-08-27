@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: irb7600_description
+    relative_path: urdf/robots/irb7600_150_350.urdf.xacro
+  SRDF:
+    relative_path: config/irb7600/irb7600.srdf
+  CONFIG:
+    author_name: Hisham Farid
+    author_email: hisham.farid@rwth-aachen.de
+    generated_timestamp: 1734048000

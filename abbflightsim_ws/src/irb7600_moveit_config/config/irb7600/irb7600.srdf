@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="abb_irb7600_150_350">
+    <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_link"/>
+
+    <group name="arm">
+        <joint name="joint_1"/>
+        <joint name="joint_2"/>
+        <joint name="joint_3"/>
+        <joint name="joint_4"/>
+        <joint name="joint_5"/>
+        <joint name="joint_6"/>
+    </group>
+
+    <group name="pilot_cabin">
+        <joint name="pilot_cabin_controller"/>
+    </group>
+
+    <group name="arm_with_cabin"> <!-- Das war mal arm_with_gripper-->
+        <group name="arm" />
+        <group name="pilot_cabin" />
+    </group>
+
+    <end_effector name="pilot_cabin" parent_link="tool0" group="pilot_cabin_link"/>
+
+    <group_state name="home" group="arm">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0"/>
+    </group_state>
+
+    <group_state name="ready" group="arm">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1.5708"/>
+        <joint name="joint_4" value="1.5708"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0"/>
+    </group_state>
+
+    <!--
+      Pairs of links in the robot model for which collision checking should be disabled
+      during motion planning and simulation.
+
+      Adjacent: Collision checking is unnecessary because the links are always in contact.
+
+      Never: Collision checking is unnecessary because the robotic arm is designed in a way that
+        they will never collide with each other.
+
+        Links:
+        world
+
+        base_link
+        link_1
+        link_2
+        link_3
+        link_4
+        link_5
+        link_6
+        balancer_piston
+        pilot_cabin_link
+        wings_link
+    -->
+
+    <disable_collisions link1="base_link" link2="link_1" reason="Adjacent"/>
+
+    <disable_collisions link1="base_link" link2="link_2" reason="Never"/>
+
+    <disable_collisions link1="base_link" link2="link_3" reason="Never"/>
+
+    <disable_collisions link1="link_1" link2="link_2" reason="Adjacent"/>
+
+    <disable_collisions link1="link_2" link2="link_3" reason="Adjacent"/>
+
+    <disable_collisions link1="link_2" link2="link_5" reason="Never"/>
+
+    <disable_collisions link1="link_3" link2="link_4" reason="Adjacent"/>
+
+    <disable_collisions link1="link_4" link2="link_5" reason="Adjacent"/>
+
+    <disable_collisions link1="link_5" link2="link_6" reason="Adjacent"/>
+
+    <disable_collisions link1="link_6" link2="balancer_piston" reason="Adjacent"/>
+
+</robot>

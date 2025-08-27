@@ -19,17 +19,11 @@ RUN apt-get update && apt-get install -y \
 
 #install gazebo 
 RUN apt-get update && apt-get install -y \
-    curl lsb-release gnupg
-
-
-RUN apt-get install -y ros-jazzy-ros-gz
-RUN apt install -y ros-jazzy-urdf-tutorial
-RUN apt install -y gedit
-
-#do all the rest
-RUN rm -rf /var/lib/apt/lists/*
-
-RUN apt-get install -y git
+    curl lsb-release gnupg \
+    ros-jazzy-ros-gz \
+    ros-jazzy-urdf-tutorial \
+    gedit \
+    git 
 
 RUN git clone https://github.com/MOGI-ROS/Week-1-2-Introduction-to-ROS2.git
 
@@ -38,7 +32,9 @@ RUN apt-get update && apt-get install -y \
     ros-jazzy-ros2-control \
     ros-jazzy-ros2-controllers \
     ros-jazzy-gz-ros2-control \
-    ros-jazzy-gz-ros2-control-demos
+    ros-jazzy-gz-ros2-control-demos \
+    ros-jazzy-moveit \
+    ros-jazzy-rviz-visual-tools
 
 ENV GZ_SIM_SYSTEM_PLUGIN_PATH=/opt/ros/jazzy/lib
 
@@ -46,7 +42,13 @@ ENV LD_LIBRARY_PATH=/opt/ros/jazzy/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt
 ENV GAZEBO_MODEL_PATH=/flightsim_ws/install/abb_irb7600/share/abb_irb7600/description
 
 
+RUN rm -rf /var/lib/apt/lists/*
 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["bash"]
 
 RUN echo "ALL DONE"
 
