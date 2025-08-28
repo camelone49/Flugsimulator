@@ -48,7 +48,7 @@ To run the current example (Windows Instructions):
    source install/setup.bash
    ```
  7. Redesign Qt:
-    ``` bash
+    ```bash
    designer
     ```
 
