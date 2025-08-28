@@ -39,15 +39,17 @@ To run the current example (Windows Instructions):
    ```
 
    Notice how the flightsim_ws folder is mounted onto the Container as develop folder.
-6. in the Docker Container (for every container shell):
+6. in the Docker Container (if your ws is not automatically sourced):
    ```bash
    source /opt/ros/jazzy/setup.bash
+
+   cd flightsim_ws
+   colcon build
+   source install/setup.bash
    ```
- 7. Navigate to the flightsim workspace and build it:
+ 7. Redesign Qt:
     ``` bash
-    cd flightsim_ws
-    colcon build
-    source install/setup.bash
+   designer
     ```
 
   8. You have 3 packages, i experimented with 2. The important one is abb_irb7600, so we launch the application with the joint states publisher to control the joints:
