@@ -64,24 +64,60 @@
         wings_link
     -->
 
-    <disable_collisions link1="base_link" link2="link_1" reason="Adjacent"/>
+<!-- Disable all self-collisions -->
+<disable_collisions link1="base_link" link2="link_1" reason="Never"/>
+<disable_collisions link1="base_link" link2="link_2" reason="Never"/>
+<disable_collisions link1="base_link" link2="link_3" reason="Never"/>
+<disable_collisions link1="base_link" link2="link_4" reason="Never"/>
+<disable_collisions link1="base_link" link2="link_5" reason="Never"/>
+<disable_collisions link1="base_link" link2="link_6" reason="Never"/>
+<disable_collisions link1="base_link" link2="balancer_piston" reason="Never"/>
+<disable_collisions link1="base_link" link2="pilot_cabin_link" reason="Never"/>
+<disable_collisions link1="base_link" link2="wings_link" reason="Never"/>
 
-    <disable_collisions link1="base_link" link2="link_2" reason="Never"/>
+<disable_collisions link1="link_1" link2="link_2" reason="Never"/>
+<disable_collisions link1="link_1" link2="link_3" reason="Never"/>
+<disable_collisions link1="link_1" link2="link_4" reason="Never"/>
+<disable_collisions link1="link_1" link2="link_5" reason="Never"/>
+<disable_collisions link1="link_1" link2="link_6" reason="Never"/>
+<disable_collisions link1="link_1" link2="balancer_piston" reason="Never"/>
+<disable_collisions link1="link_1" link2="pilot_cabin_link" reason="Never"/>
+<disable_collisions link1="link_1" link2="wings_link" reason="Never"/>
 
-    <disable_collisions link1="base_link" link2="link_3" reason="Never"/>
+<disable_collisions link1="link_2" link2="link_3" reason="Never"/>
+<disable_collisions link1="link_2" link2="link_4" reason="Never"/>
+<disable_collisions link1="link_2" link2="link_5" reason="Never"/>
+<disable_collisions link1="link_2" link2="link_6" reason="Never"/>
+<disable_collisions link1="link_2" link2="balancer_piston" reason="Never"/>
+<disable_collisions link1="link_2" link2="pilot_cabin_link" reason="Never"/>
+<disable_collisions link1="link_2" link2="wings_link" reason="Never"/>
 
-    <disable_collisions link1="link_1" link2="link_2" reason="Adjacent"/>
+<disable_collisions link1="link_3" link2="link_4" reason="Never"/>
+<disable_collisions link1="link_3" link2="link_5" reason="Never"/>
+<disable_collisions link1="link_3" link2="link_6" reason="Never"/>
+<disable_collisions link1="link_3" link2="balancer_piston" reason="Never"/>
+<disable_collisions link1="link_3" link2="pilot_cabin_link" reason="Never"/>
+<disable_collisions link1="link_3" link2="wings_link" reason="Never"/>
 
-    <disable_collisions link1="link_2" link2="link_3" reason="Adjacent"/>
+<disable_collisions link1="link_4" link2="link_5" reason="Never"/>
+<disable_collisions link1="link_4" link2="link_6" reason="Never"/>
+<disable_collisions link1="link_4" link2="balancer_piston" reason="Never"/>
+<disable_collisions link1="link_4" link2="pilot_cabin_link" reason="Never"/>
+<disable_collisions link1="link_4" link2="wings_link" reason="Never"/>
 
-    <disable_collisions link1="link_2" link2="link_5" reason="Never"/>
+<disable_collisions link1="link_5" link2="link_6" reason="Never"/>
+<disable_collisions link1="link_5" link2="balancer_piston" reason="Never"/>
+<disable_collisions link1="link_5" link2="pilot_cabin_link" reason="Never"/>
+<disable_collisions link1="link_5" link2="wings_link" reason="Never"/>
 
-    <disable_collisions link1="link_3" link2="link_4" reason="Adjacent"/>
+<disable_collisions link1="link_6" link2="balancer_piston" reason="Never"/>
+<disable_collisions link1="link_6" link2="pilot_cabin_link" reason="Never"/>
+<disable_collisions link1="link_6" link2="wings_link" reason="Never"/>
 
-    <disable_collisions link1="link_4" link2="link_5" reason="Adjacent"/>
+<disable_collisions link1="balancer_piston" link2="pilot_cabin_link" reason="Never"/>
+<disable_collisions link1="balancer_piston" link2="wings_link" reason="Never"/>
 
-    <disable_collisions link1="link_5" link2="link_6" reason="Adjacent"/>
+<disable_collisions link1="pilot_cabin_link" link2="wings_link" reason="Never"/>
 
-    <disable_collisions link1="link_6" link2="balancer_piston" reason="Adjacent"/>
 
 </robot>
