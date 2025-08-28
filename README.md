@@ -48,9 +48,9 @@ To run the current example (Windows Instructions):
    source install/setup.bash
    ```
  7. Redesign Qt:
-    ```bash
+   ```bash
    designer
-    ```
+   ```
 
   8. You have 3 packages, i experimented with 2. The important one is abb_irb7600, so we launch the application with the joint states publisher to control the joints:
      ```bash
