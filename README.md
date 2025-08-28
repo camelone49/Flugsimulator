@@ -24,6 +24,20 @@ To run the current example (Windows Instructions):
    ```bash
    docker run -it --rm -v ${PWD}/flightsim_ws:/flightsim_ws --name first_flightsim_container --network=host -e DISPLAY=host.docker.internal:0.0 --gpus all hisham_flightsim_image
    ```
+   If you get problems regarding the timestamps, try:
+   ```bash
+   docker run -it --rm `
+    -v ${PWD}/abbflightsim_ws:/abbflightsim_ws `
+    -v /etc/localtime:/etc/localtime:ro `
+    -v /etc/timezone:/etc/timezone:ro `
+    --name first_flightsim_container `
+    --network=host `
+    -e DISPLAY=host.docker.internal:0.0 `
+    --gpus all `
+    hisham_flightsim_image
+
+   ```
+
    Notice how the flightsim_ws folder is mounted onto the Container as develop folder.
 6. in the Docker Container (for every container shell):
    ```bash
