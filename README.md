@@ -78,6 +78,14 @@ The latter runs the Qt interface that allows you to control the joints of the ro
   <img src="https://github.com/user-attachments/assets/47c91807-94ef-4d69-b3ce-12a9b844f54f" alt="gif" width="400"/>
 </p>
 
+10. To run the first inverse kinematics script:
+    ```bash
+    ros2 launch irb7600_gazebo irb7600.gazebo.launch.py use_rviz:=false
+    ros2 launch irb7600_moveit_config move_group.launch.py
+    ros2 run irb7600_moveit_config drive_2221
+    ```
+which drives the robot to x = 2; y = 2; z = 2; w = 1
+
 ## TODO: 
 
 1. Add the Joint limits
