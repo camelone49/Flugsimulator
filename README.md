@@ -24,7 +24,7 @@ To run the current example (Windows Instructions):
    ```
 5. Then, you can start the Container by typing:
 ```bash
-docker run --privileged -it --rm `
+docker run -it --rm `
     -v ${PWD}/abbflightsim_ws:/abbflightsim_ws `
     -v /etc/localtime:/etc/localtime:ro `
     -v /etc/timezone:/etc/timezone:ro `
