@@ -11,16 +11,7 @@
         <joint name="joint_6"/>
     </group>
 
-    <group name="pilot_cabin">
-        <joint name="pilot_cabin_controller"/>
-    </group>
-
-    <group name="arm_with_cabin"> <!-- Das war mal arm_with_gripper-->
-        <group name="arm" />
-        <group name="pilot_cabin" />
-    </group>
-
-    <end_effector name="pilot_cabin" parent_link="tool0" group="pilot_cabin_link"/>
+    <end_effector name="pilot_cabin" parent_link="tool0" group="arm"/>
 
     <group_state name="home" group="arm">
         <joint name="joint_1" value="0"/>

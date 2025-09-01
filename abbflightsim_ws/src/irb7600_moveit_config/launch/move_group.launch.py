@@ -111,7 +111,7 @@ def generate_launch_description():
         )
 
         # MoveIt capabilities
-        move_group_capabilities = {"capabilities": "move_group/ExecuteTaskSolutionCapability"}
+        #move_group_capabilities = {"capabilities": "move_group/ExecuteTaskSolutionCapability"}
 
         # Create move_group node
         start_move_group_node_cmd = Node(
@@ -122,7 +122,7 @@ def generate_launch_description():
                 moveit_config.to_dict(),
                 {'use_sim_time': use_sim_time},
                 {'start_state': {'content': initial_positions_file_path}},
-                move_group_capabilities,
+                #move_group_capabilities,
             ],
         )
 
