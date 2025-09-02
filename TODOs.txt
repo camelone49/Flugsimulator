@@ -1,0 +1,6 @@
+This is a TODO file to keep up with what i have to implement
+
+1. IK Visualization: Markings in radiuses of the robot, big trajectory markings, texts describing stuff on rviz
+2. Dynamic Planning: Use the existing Qt interface and integrate the IK functionality such that one can enter X Y Z W and the robot drives to that position.
+3. Joint Limits: I it should be absolutely clear that no part of the pilot cabin can touch the ground. There needs to be some kind of Limit
+4. Hook up a PlayStation3 controller: The controller needs to control the movement of the robot as if it were an airplane.
