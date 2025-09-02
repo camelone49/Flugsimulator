@@ -2,7 +2,7 @@
 set -e
 
 # Install additional dependencies (only runs when building)
-apt-get update && apt-get install -y ros-jazzy-moveit ros-jazzy-rviz-visual-tools
+apt-get update && apt-get install -y ros-jazzy-moveit ros-jazzy-rviz-visual-tools ros-jazzy-moveit-visual-tools
 
 # Add ROS and workspace sources to bashrc so every terminal is preloaded
 echo "source /opt/ros/jazzy/setup.bash" >> /root/.bashrc

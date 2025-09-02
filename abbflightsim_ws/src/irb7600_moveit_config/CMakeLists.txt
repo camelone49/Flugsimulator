@@ -15,12 +15,14 @@ find_package(moveit_kinematics REQUIRED)
 find_package(moveit_ros_visualization REQUIRED)
 find_package(rviz2 REQUIRED)
 find_package(rviz_visual_tools REQUIRED)
+find_package(moveit_visual_tools REQUIRED)
 
 # -------------------------
 # Executable
 # -------------------------
 add_executable(hello_moveit src/hello_moveit.cpp)
 add_executable(drive_2221 src/drive_2221.cpp)
+add_executable(drive_with_rviz src/drive_with_rviz.cpp)
 
 ament_target_dependencies(hello_moveit
   rclcpp
@@ -34,10 +36,17 @@ ament_target_dependencies(drive_2221
   moveit_ros_planning_interface
 )
 
+ament_target_dependencies(drive_with_rviz
+  "moveit_ros_planning_interface"
+  "moveit_visual_tools"
+  "rclcpp"
+)
+
 # Install the executable so "ros2 run" can find it
 install(TARGETS 
   hello_moveit
   drive_2221
+  drive_with_rviz
   DESTINATION lib/${PROJECT_NAME}
 )
 

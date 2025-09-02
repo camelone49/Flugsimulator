@@ -11,7 +11,11 @@
         <joint name="joint_6"/>
     </group>
 
-    <end_effector name="pilot_cabin" parent_link="tool0" group="arm"/>
+    <group name="ee">
+        <link name="link_6"/>
+    </group>
+
+    <end_effector name="tool0" parent_link="link_6" group="ee"/>
 
     <group_state name="home" group="arm">
         <joint name="joint_1" value="0"/>
